@@ -4,6 +4,26 @@ const template = document.createElement("template");
 
 template.innerHTML = `
                         <style>
+                            .preview {
+                            border-width: 0;
+                            width: 100%;
+                            font-family: Roboto, sans-serif;
+                            padding: 0.5rem 1rem;
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            text-align: left;
+                            border-radius: 8px;
+                            border: 1px solid rgba(var(--color-dark), 0.15);
+                            background: rgba(var(--color-light), 1);
+                            }
+
+                            @media (min-width: 60rem) {
+                            .preview {
+                                padding: 1rem;
+                            }
+                            }
+
                             .preview__image {
                             width: 48px;
                             height: 70px;
@@ -33,15 +53,7 @@ template.innerHTML = `
                             }
                         </style>
 
-                        <img
-                        class="preview__image"
-                        src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348495562i/42891.jpg"
-                    />
-
-                    <div class="preview__info">
-                        <h3 class="preview__title">Journeys in English</h3>
-                        <div class="preview__author">Bill Bryson</div>
-                    </div>
+                        <slot></slot>
                     `;
 
 class Preview extends HTMLElement {

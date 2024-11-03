@@ -39,6 +39,7 @@ let booksDisplayed;
  * @type {Object.<PropertyDescriptor, HTMLElement>}
  */
 const html = {
+  customPreview: document.createElement("book-preview"),
   fragment: document.createDocumentFragment(),
   theme: document.querySelector("[data-settings-theme]"),
   showMoreButton: document.querySelector("[data-list-button]"),
@@ -88,9 +89,9 @@ function displayBooks(books) {
                     </div>
                 `;
 
-      html.fragment.appendChild(element);
+      html.customPreview.appendChild(element);
     }
-    html.bookList.appendChild(html.fragment);
+    html.bookList.appendChild(html.customPreview);
     booksDisplayed += BOOKS_PER_PAGE;
   } catch (err) {
     console.error(`There's been an issue with displaying books - ${err}`);
