@@ -74,7 +74,7 @@ function displayBooks(books) {
       booksDisplayed + BOOKS_PER_PAGE
     )) {
       const element = document.createElement("button");
-      element.className = "preview";
+      html.customPreview.className = "preview";
       element.setAttribute("data-preview", id);
 
       element.innerHTML = `

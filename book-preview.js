@@ -24,14 +24,28 @@ template.innerHTML = `
                             }
                             }
 
+                            .preview_hidden {
+                            display: none;
+                            }
+
+                            .preview:hover {
+                            background: rgba(var(--color-blue), 0.05);
+                            }
+
                             .preview__image {
                             width: 48px;
                             height: 70px;
                             object-fit: cover;
                             background: grey;
                             border-radius: 2px;
-                            box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-                                0px 1px 1px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+                            box-shadow:
+                                0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+                                0px 1px 1px 0px rgba(0, 0, 0, 0.1),
+                                0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+                            }
+
+                            .preview__info {
+                            padding: 1rem;
                             }
 
                             .preview__title {
@@ -39,13 +53,9 @@ template.innerHTML = `
                             font-weight: bold;
                             display: -webkit-box;
                             -webkit-line-clamp: 2;
-                            -webkit-box-orient: vertical;  
+                            -webkit-box-orient: vertical;
                             overflow: hidden;
-                            color: rgba(var(--color-dark), 0.8)
-                            }
-
-                            .preview__info {
-                            padding: 1rem;
+                            color: rgba(var(--color-dark), 0.8);
                             }
 
                             .preview__author {
