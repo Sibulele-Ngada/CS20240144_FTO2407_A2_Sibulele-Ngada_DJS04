@@ -26,7 +26,7 @@ import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
  * Array of the current selection of books
  * @type {Array<Book>}
  */
-let matches;
+export let matches;
 
 /**
  * Maximum number of books displayed on screen
@@ -90,7 +90,6 @@ function displayBooks(books) {
 
       html.fragment.appendChild(element);
     }
-
     html.bookList.appendChild(html.fragment);
     booksDisplayed += BOOKS_PER_PAGE;
   } catch (err) {
