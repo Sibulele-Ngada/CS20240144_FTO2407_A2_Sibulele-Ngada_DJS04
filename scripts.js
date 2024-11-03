@@ -65,11 +65,11 @@ const html = {
 
 /**
  * Displays preview of books for user to select
- * @param {Array<Book>} books
+ * @param {Array<Book>} nBooks
  */
-function displayBooks(books) {
+function displayBooks(nBooks) {
   try {
-    for (const { author, id, image, title } of books.slice(
+    for (const { author, id, image, title } of nBooks.slice(
       booksDisplayed,
       booksDisplayed + BOOKS_PER_PAGE
     )) {
@@ -227,7 +227,9 @@ function selectedBook(pathArray) {
  */
 function showResults(result) {
   try {
-    html.bookList.innerHTML = "";
+    while (html.customPreview.hasChildNodes()) {
+      html.customPreview.removeChild(html.customPreview.firstChild);
+    }
     booksDisplayed = 0;
     matches = result;
 
